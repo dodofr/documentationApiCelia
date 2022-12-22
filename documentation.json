@@ -1,0 +1,115 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API REST pour site d'esthetique",
+      "version": "1.0.0"
+    },
+    "paths": {
+  "createUser": {
+    "description": "Crée un nouvel utilisateur",
+    "request": {
+      "method": "POST",
+      "url": "/users",
+      "body": {
+        "username": "string (requis)",
+        "name": "string (requis)",
+        "firstname": "string",
+        "password": "string (requis)",
+        "email": "string (requis)"
+      }
+    },
+    "response": {
+      "status": "201",
+      "body": {
+        "id": "integer",
+        "username": "string",
+        "name": "string",
+        "firstname": "string",
+        "password": "string",
+        "email": "string"
+      }
+    }
+  },
+  "getAllUsers": {
+    "description": "Renvoie la liste de tous les utilisateurs",
+    "request": {
+      "method": "GET",
+      "url": "/users"
+    },
+    "response": {
+      "status": "200",
+      "body": [
+        {
+          "id": "integer",
+          "username": "string",
+          "name": "string",
+          "firstname": "string",
+          "password": "string",
+          "email": "string"
+        },
+        {
+          "id": "integer",
+          "username": "string",
+          "name": "string",
+          "firstname": "string",
+          "password": "string",
+          "email": "string"
+        }
+      ]
+    }
+  },
+  "getUserById": {
+    "description": "Renvoie l'utilisateur avec l'ID spécifié",
+    "request": {
+      "method": "GET",
+      "url": "/users/:id"
+    },
+    "response": {
+      "status": "200",
+      "body": {
+        "id": "integer",
+        "username": "string",
+        "name": "string",
+        "firstname": "string",
+        "password": "string",
+        "email": "string"
+      }
+    }
+  },
+  "updateUser": {
+    "description": "Met à jour l'utilisateur avec l'ID spécifié",
+    "request": {
+      "method": "PUT",
+      "url": "/users/:id",
+      "body": {
+        "username": "string",
+        "name": "string",
+        "firstname": "string",
+        "password": "string",
+        "email": "string"
+      }
+    },
+    "response": {
+      "status": "200",
+      "body": {
+        "id": "integer",
+        "username": "string",
+        "name": "string",
+        "firstname": "string",
+        "password": "string",
+        "email": "string"
+      }
+    }
+  },
+  "deleteUser": {
+    "description": "Supprime l'utilisateur avec l'ID spécifié",
+    "request": {
+      "method": "DELETE",
+      "url": "/users/:id"
+    },
+    "response": {
+      "status": "204"
+    }
+  }
+}
+}
